@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "tarefas.h"
-
+// adicionar (1 ponto) Os erros não foram tratados na função main
 int main(){
     funcao fs[] = {criar, deletar, listar, salvar, carregar};
 
