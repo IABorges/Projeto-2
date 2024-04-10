@@ -2,7 +2,7 @@
 #include "tarefas.h"
 
 int main(){
-    funcao fs[] = {criar, deletar, listar, salvar, carregar};
+    funcao fs[] = {criar, deletar, listar, salvar, carregar,carregarUser,salvarUser};
 
     Tarefa tarefas[TOTAL];
     int pos;
@@ -16,12 +16,14 @@ int main(){
         printf("1 - Criar tarefa\n");
         printf("2 - Deletar tarefa\n");
         printf("3 - Listar tarefas\n");
+        printf("6 - Carregar Arquivo (teste)\n");
+        printf("7 - Salvar Arquivo (teste)\n");
         printf("0 - Sair\n");
         printf("Escolha uma opcao: ");
 
         scanf("%d", &opcao);
         opcao--;
-        if(opcao > 2)
+        if(opcao > 100)
             printf("Opcao invalida\n");
         else if(opcao >= 0)
             fs[opcao](tarefas, &pos);
