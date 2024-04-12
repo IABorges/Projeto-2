@@ -55,15 +55,33 @@ ERROS deletar(Tarefa tarefas[], int *pos){
     return OK;
 }
 
-ERROS listar(Tarefa tarefas[], int *pos){
-    if(*pos == 0)
-        return SEM_TAREFAS;
+ERROS listar(Tarefa tarefas[], int *pos) {
+    char categoria[100]; 
+    char resposta[30]; 
+    int existe = 0;
+    printf("Digite a categoria das tarefas:\t ");
+    scanf("%s", categoria);
 
-    for(int i=0; i<*pos; i++){
-        printf("Pos: %d\t", i+1);
-        printf("Prioridade: %d\t", tarefas[i].prioridade);
-        printf("Categoria: %s\t", tarefas[i].categoria);
-        printf("Descricao: %s\n", tarefas[i].descricao);
+    if (*pos == 0) {
+        printf("Não tem tarefas para listar\n");
+        return SEM_TAREFAS;
+    }
+
+    for (int sequencia = 0 ; sequencia <= 0; sequencia++) { 
+        for (int indice = 0; indice < *pos; indice++) {
+            if (strcmp(tarefas[indice].categoria, categoria) == 0) {
+                existe = 1;
+                    printf("________________________________________________________\n");
+                    printf("Categoria: %s \tDescricao: %s \tPrioridade: %d\t \n  ", tarefas[indice].categoria, tarefas[indice].descricao, tarefas[indice].prioridade);  
+                }
+            }
+        }
+    
+
+    if (existe == 0) {
+        printf("___________________________________________\n");
+        printf("Essa categoria não existe\n");
+        return NAO_ENCONTRADO;
     }
 
     return OK;
