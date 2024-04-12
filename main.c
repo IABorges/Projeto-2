@@ -19,6 +19,7 @@ int main(){
         printf("6 - Carregar Arquivo (teste)\n");
         printf("7 - Salvar Arquivo (teste)\n");
         printf("0 - Sair\n");
+        printf("** SEMPRE SALVE O CODIGO ANTES DE SAIR**\n");
         printf("Escolha uma opcao: ");
 
         scanf("%d", &opcao);
@@ -32,5 +33,5 @@ int main(){
 
     } while(opcao >= 0);
 
-    fs[3](tarefas, &pos);
+    //fs[3](tarefas, &pos); ESTA LINHA FAZ SALVAMENTO AUTomatico
 }
