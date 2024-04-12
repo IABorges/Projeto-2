@@ -2,23 +2,34 @@
 #include <string.h>
 #include "tarefas.h"
 
-ERROS criar(Tarefa tarefas[], int *pos){
-    if(*pos >= TOTAL)
-        return MAX_TAREFA;
+ERROS criar(Tarefa tarefas[], int *pos) {
+  if (*pos >= TOTAL)
+    return MAX_TAREFA;
 
-    printf("Entre com a prioridade: ");
-    scanf("%d", &tarefas[*pos].prioridade);
-    clearBuffer();
-    printf("Entre com a categoria: ");
-    fgets(tarefas[*pos].categoria, 100, stdin);
+int prioridade;
+    do{
+        printf("Entre com a prioridade de 1 a 10: ");
+        scanf("%d",&prioridade);
+        clearBuffer();
 
-    printf("Entre com a descricao: ");
-    fgets(tarefas[*pos].descricao, 300, stdin);
+        if(prioridade < 1 && prioridade > 10) {
+            printf("Erro numero que digitou foi menor que 1 ou maior que 10.\n");
+        }
+    } while (prioridade < 1 && prioridade > 10);
 
-    *pos = *pos + 1;
 
-    return OK;
+  printf("Entre com a categoria: ");
+  fgets(tarefas[*pos].categoria, 100, stdin);
+  tarefas[*pos].categoria[strcspn(tarefas[*pos].categoria, "\n")] = 0;
+  printf("Entre com a descricao: ");
+  fgets(tarefas[*pos].descricao, 300, stdin);
+  tarefas[*pos].descricao[strcspn(tarefas[*pos].descricao, "\n")] = 0;
+
+  *pos = *pos + 1;
+
+  return OK;
 }
+
 
 ERROS deletar(Tarefa tarefas[], int *pos){
     // teste se existem tarefas
