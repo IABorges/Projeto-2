@@ -6,6 +6,7 @@ ERROS criar(Tarefa tarefas[], int *pos) {
   if (*pos >= TOTAL)
     return MAX_TAREFA;
 
+
 int prioridade;
     do{
         printf("Entre com a prioridade de 1 a 10: ");
@@ -173,6 +174,30 @@ ERROS salvarUser(Tarefa tarefas[], int *pos){
 
     return OK;
 }
+
+ERROS gravar(Tarefa tarefas[], int *pos){
+    if (*pos == 0)
+        return SEM_TAREFAS;
+FILE *fi = fopen("arquivo.txt","w");
+
+if (fi==0){
+    return SEM_TAREFAS;
+}
+    for (int i = 0; i< *pos; i++){
+        fprintf(fi,"Pos: %d\t" , i++);
+        fprintf(fi,"Prioridade: %d\t" , tarefas[i].prioridade);
+        fprintf(fi,"Categoria: %s\t" , tarefas[i].categoria);
+        fprintf(fi,"Descricao: %s\n" , tarefas[i].descricao);
+    }
+
+    if(fclose(fi))
+        return FECHAR;
+
+
+    return OK;
+
+}
+
 
 void clearBuffer(){
     int c;

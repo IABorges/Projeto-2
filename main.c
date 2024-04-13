@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "tarefas.h"
 int main(){
-    funcao fs[] = {criar, deletar, listar,carregarUser,salvarUser, salvar, carregar,};
+    funcao fs[] = {criar, deletar, listar,carregarUser,salvarUser,gravar, salvar, carregar,};
 
     Tarefa tarefas[TOTAL];
     int pos;
-    ERROS erro = fs[6](tarefas, &pos);
+    ERROS erro = fs[7](tarefas, &pos);
     if(erro != OK)
         pos = 0;
 
@@ -17,6 +17,7 @@ int main(){
         printf("3 - Listar tarefas\n");
         printf("4 - Carregar Arquivo \n");
         printf("5 - Salvar Arquivo \n");
+        printf("6 - gravar Arquivo.txt \n");
         printf("0 - Sair\n");
         printf("** SEMPRE SALVE O CODIGO ANTES DE SAIR**\n");
         printf("Escolha uma opcao: ");

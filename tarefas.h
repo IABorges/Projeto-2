@@ -19,5 +19,6 @@ ERROS salvar(Tarefa tarefas[], int *pos);
 ERROS carregar(Tarefa tarefas[], int *pos);
 ERROS carregarUser(Tarefa tarefas[], int *pos);
 ERROS salvarUser(Tarefa tarefas[], int *pos);
+ERROS gravar(Tarefa tarefas[], int *pos);
 
 void clearBuffer();
