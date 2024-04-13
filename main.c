@@ -15,8 +15,8 @@ int main(){
         printf("1 - Criar tarefa\n");
         printf("2 - Deletar tarefa\n");
         printf("3 - Listar tarefas\n");
-        printf("6 - Carregar Arquivo (teste)\n");
-        printf("7 - Salvar Arquivo (teste)\n");
+        printf("6 - Carregar Arquivo \n");
+        printf("7 - Salvar Arquivo \n");
         printf("0 - Sair\n");
         printf("** SEMPRE SALVE O CODIGO ANTES DE SAIR**\n");
         printf("Escolha uma opcao: ");

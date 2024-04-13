@@ -63,7 +63,7 @@ ERROS listar(Tarefa tarefas[], int *pos) {
     scanf("%s", categoria);
 
     if (*pos == 0) {
-        printf("Não tem tarefas para listar\n");
+        //printf("Não tem tarefas para listar\n");
         return SEM_TAREFAS;
     }
 
